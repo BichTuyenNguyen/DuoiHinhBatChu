@@ -117,23 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="doremon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\doremon3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="checksumCondition1.Configuration" xml:space="preserve">
+    <value>Press to configure</value>
+  </metadata>
+  <data name="dbo_KiemTraTaikhoanTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.KiemTraTaikhoan
+DECLARE @RC AS INT, @user AS NVARCHAR (50), @pass AS NCHAR (20);
+
+SELECT @RC = 0,
+       @user = NULL,
+       @pass = NULL;
+
+EXECUTE @RC = [dbo].[KiemTraTaikhoan] @user, @pass;
+
+
+</value>
   </data>
-  <data name="doremon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\doremon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="doremon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\doremon2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="doremon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\doremon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="doremon21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\doremon21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
