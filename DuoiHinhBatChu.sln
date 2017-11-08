@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KiemThuPM", "KiemThuPM\KiemThuPM.csproj", "{BA05B20A-144E-49C0-918E-B630874ED760}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game_DuoiHinhBatChu", "KiemThuPM\Game_DuoiHinhBatChu.csproj", "{BA05B20A-144E-49C0-918E-B630874ED760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KiemThuTester", "KiemThuTester\KiemThuTester.csproj", "{BC2A2129-1579-4773-B796-4B0F9091C402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KiemThuForm", "KiemThuTester\KiemThuForm.csproj", "{BC2A2129-1579-4773-B796-4B0F9091C402}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DBTest", "DBTest\DBTest.sqlproj", "{51584BC2-1BA5-4070-8493-F8F098287371}"
 EndProject

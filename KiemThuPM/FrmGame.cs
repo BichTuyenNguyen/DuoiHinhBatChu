@@ -27,15 +27,16 @@ namespace KiemThuPM
         static int Diem = 5;
         int CauHoi = 1;
         Label [] arrLabel;
-        private void FrmXuLy_Load(object sender, EventArgs e)
+        Button[] arrButton;
+        /// <summary>
+        /// Hàm khởi tạo
+        /// </summary>
+        public void init()
         {
-
             //câu hỏi
             CauHoi = RandQuestion();
-            lbCauHoi.Text = CauHoi.ToString();
             //hình ảnh
             LoadPicture();
-            lbDoan.Text = mixAnswer();
             // điểm
             lbDiem.Text = Diem.ToString();
             //level
@@ -44,6 +45,15 @@ namespace KiemThuPM
             Addlabels();
             // ô đoán
             AddButtons();
+        }
+        /// <summary>
+        /// Form load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmXuLy_Load(object sender, EventArgs e)
+        {
+            init();
         }
         /// <summary>
         /// Button thoát
@@ -68,11 +78,28 @@ namespace KiemThuPM
         {
             string StrDapAn = getAnswer();
             char[] ArrDapAn = StrDapAn.ToCharArray();
+            for (int i = 0; i < ArrDapAn.Length; i++)
+            {
+                ArrDapAn[i] = char.ToUpper(ArrDapAn[i]);
+            }//lấy đáp án
             if (Diem >= 5)
             {
-                lbGoiY.Text = ArrDapAn[0].ToString();
-                Diem -= 5;
-                lbDiem.Text = Diem.ToString();
+                for(int i = 0;i <arrLabel.Length;i++)
+                {
+                    if(arrLabel[i].Text == "")
+                    {
+                        arrLabel[i].Text = ArrDapAn[i].ToString();
+                        arrLabel[i].ForeColor = Color.Blue;
+                        arrLabel[i].Enabled = true;
+                        gbLable.Controls.Add(arrLabel[i]);
+                        gbLable.Invalidate();
+                        arrLabel[i].TextAlign = ContentAlignment.MiddleCenter;
+                        Diem -= 5;
+                        lbDiem.Text = Diem.ToString();
+                        break;
+                    }
+                }
+                
             }
             else
                 MessageBox.Show("Điểm của bạn không đủ!");
@@ -187,9 +214,7 @@ namespace KiemThuPM
             CauHoi = RandQuestion();
             level = 1;
             Diem = 5;
-            lbCauHoi.Text = CauHoi.ToString();
             LoadPicture();
-            lbDoan.Text = mixAnswer();
             lbDiem.Text = Diem.ToString();
             lbLevel.Text = level.ToString();
             btGoiY.Enabled = true;
@@ -236,10 +261,8 @@ namespace KiemThuPM
                         Diem += 5;
                         lbDiem.Text = Diem.ToString();
                         lbLevel.Text = level.ToString();
-                        CauHoi = RandQuestion();
-                        lbCauHoi.Text = CauHoi.ToString();
+                        CauHoi = RandQuestion();       
                         LoadPicture();
-                        lbDoan.Text = mixAnswer();
                         btGoiY.Enabled = true;
                         Addlabels();
                         AddButtons();
@@ -271,19 +294,44 @@ namespace KiemThuPM
             return Diem;
         }
         /// <summary>
+        /// Nhấn trên lable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbA_Click(object sender, EventArgs e)
+        {
+            for (int i = arrLabel.Length - 1; i >= 0; i--)
+            {
+                if (arrLabel[i].Text != "")
+                {
+                    for(int j = 0; j < arrButton.Length; j++)
+                    {
+                        if(arrLabel[i].Text == arrButton[j].Text && arrButton[j].Enabled == false)
+                        {
+                            arrButton[j].Enabled = true;
+                            break;
+                        }
+                    }
+                    arrLabel[i].Text = "";
+                    break;
+                }
+            }
+            
+        }
+        /// <summary>
         /// Nhấn 1 button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btA_Click(object sender, EventArgs e)
         {
-            Button bt = (Button)sender;
-            char c = bt.Text.ToCharArray()[0];
-            char[] arrDapAn = getAnswer().ToCharArray();
-            for (int i = 0; i < arrLabel.Length; i++)
-            {
 
-                if (arrDapAn[i] == char.ToLower(c) && arrLabel[i].Text == "")
+            Button bt = (Button)sender;           
+            char c = bt.Text.ToCharArray()[0];
+            int i = 0;
+            while (i < arrLabel.Length)
+            {
+                if (arrLabel[i].Text == "")
                 {
                     arrLabel[i].Text += c.ToString();
                     arrLabel[i].ForeColor = Color.Blue;
@@ -291,13 +339,14 @@ namespace KiemThuPM
                     gbLable.Controls.Add(arrLabel[i]);
                     gbLable.Invalidate();
                     arrLabel[i].TextAlign = ContentAlignment.MiddleCenter;
+                    bt.Enabled = false;
+                    break;
                 }
-            }
-            bt.Enabled = false;
-            //gbButton.Controls.Remove(bt);
+                else i++;
+            }         
         }
         /// <summary>
-        /// Thêm lable
+        ///  Hàm thêm lable tự dộng
         /// </summary>
         public void Addlabels()
         {
@@ -325,14 +374,17 @@ namespace KiemThuPM
                     lb.BringToFront();
                     gbLable.Controls.Add(lb);
                     arrLabel[i] = lb;
+                    arrLabel[i].Text = "";
+                    lb.Click += new System.EventHandler(this.lbA_Click);
                 }               
             }
         }
         /// <summary>
-        /// Thêm nút botton
+        /// Hàm thêm botton tự dộng
         /// </summary>
         public void AddButtons()
         {
+            arrButton = new Button[20];
             gbButton.Controls.Clear();
             ArrayList a = new ArrayList();
             Random rd = new Random();
@@ -371,18 +423,14 @@ namespace KiemThuPM
                 bt.Font = new Font(FontFamily.GenericSansSerif, 15, FontStyle.Bold);
                 bt.ForeColor = Color.Blue;
                 gbButton.Controls.Add(bt);
-                //gbButton.Controls.Add(BTdelete);
                 bt.Click += new System.EventHandler(this.btA_Click);
+                arrButton[i] = bt;
             }// tạo ra các nút button
             
         }
 
         
 
-        private void BTdelete_Click(object sender, EventArgs e)
-        {
-            //if (txtDoan.Text == "") return;
-            //txtDoan.Text = txtDoan.Text.Substring(0, txtDoan.Text.Length - 1);
-        }
+       
     }
 }

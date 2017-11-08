@@ -32,11 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picHinh = new System.Windows.Forms.PictureBox();
             this.lbLevel = new System.Windows.Forms.Label();
-            this.lbGoiY = new System.Windows.Forms.Label();
-            this.lbCauHoi = new System.Windows.Forms.Label();
-            this.lbDoan = new System.Windows.Forms.Label();
             this.gbButton = new System.Windows.Forms.GroupBox();
-            this.BTdelete = new System.Windows.Forms.Button();
             this.gbLable = new System.Windows.Forms.GroupBox();
             this.btGoiY = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
@@ -78,36 +74,6 @@
             this.lbLevel.Text = "Level";
             this.lbLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbGoiY
-            // 
-            this.lbGoiY.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbGoiY.Location = new System.Drawing.Point(403, 619);
-            this.lbGoiY.Name = "lbGoiY";
-            this.lbGoiY.Size = new System.Drawing.Size(115, 61);
-            this.lbGoiY.TabIndex = 0;
-            this.lbGoiY.Text = "lbGoiY";
-            this.lbGoiY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbCauHoi
-            // 
-            this.lbCauHoi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbCauHoi.Location = new System.Drawing.Point(535, 621);
-            this.lbCauHoi.Name = "lbCauHoi";
-            this.lbCauHoi.Size = new System.Drawing.Size(115, 61);
-            this.lbCauHoi.TabIndex = 0;
-            this.lbCauHoi.Text = "lbCauHoi";
-            this.lbCauHoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbDoan
-            // 
-            this.lbDoan.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbDoan.Location = new System.Drawing.Point(111, 619);
-            this.lbDoan.Name = "lbDoan";
-            this.lbDoan.Size = new System.Drawing.Size(124, 65);
-            this.lbDoan.TabIndex = 2;
-            this.lbDoan.Text = "lbĐoán";
-            this.lbDoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // gbButton
             // 
             this.gbButton.Location = new System.Drawing.Point(53, 471);
@@ -115,17 +81,6 @@
             this.gbButton.Size = new System.Drawing.Size(597, 135);
             this.gbButton.TabIndex = 6;
             this.gbButton.TabStop = false;
-            // 
-            // BTdelete
-            // 
-            this.BTdelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BTdelete.Location = new System.Drawing.Point(757, 642);
-            this.BTdelete.Name = "BTdelete";
-            this.BTdelete.Size = new System.Drawing.Size(74, 42);
-            this.BTdelete.TabIndex = 0;
-            this.BTdelete.Text = "DEL";
-            this.BTdelete.UseVisualStyleBackColor = false;
-            this.BTdelete.Click += new System.EventHandler(this.BTdelete_Click);
             // 
             // gbLable
             // 
@@ -198,15 +153,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KiemThuPM.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(954, 730);
-            this.Controls.Add(this.BTdelete);
+            this.ClientSize = new System.Drawing.Size(954, 640);
             this.Controls.Add(this.gbLable);
             this.Controls.Add(this.gbButton);
-            this.Controls.Add(this.lbCauHoi);
-            this.Controls.Add(this.lbGoiY);
             this.Controls.Add(this.lbLevel);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.lbDoan);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -228,9 +179,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picHinh;
         private System.Windows.Forms.Label lbLevel;
-        private System.Windows.Forms.Label lbGoiY;
-        private System.Windows.Forms.Label lbCauHoi;
-        private System.Windows.Forms.Label lbDoan;
         private System.Windows.Forms.GroupBox gbButton;
         private System.Windows.Forms.GroupBox gbLable;
         private System.Windows.Forms.Button btGoiY;
@@ -238,6 +186,5 @@
         private System.Windows.Forms.Label lbDiem;
         private System.Windows.Forms.Button btEnter;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button BTdelete;
     }
 }

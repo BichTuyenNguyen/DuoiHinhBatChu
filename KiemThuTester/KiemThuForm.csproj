@@ -57,9 +57,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KiemThuPM\KiemThuPM.csproj">
+    <ProjectReference Include="..\KiemThuPM\Game_DuoiHinhBatChu.csproj">
       <Project>{ba05b20a-144e-49c0-918e-b630874ed760}</Project>
-      <Name>KiemThuPM</Name>
+      <Name>Game_DuoiHinhBatChu</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
