@@ -13,7 +13,7 @@ namespace KiemThuPM
 {
     public partial class FrmSignIn : Form
     {
-        SqlConnection cn = new SqlConnection("Data Source=.;Initial Catalog=doihinhbatchu;Integrated Security=True");
+        SqlConnection cn = new SqlConnection(@"Data Source=ADMINPC\THACH;Initial Catalog=duoihinhbatchu;Integrated Security=True;");
         public FrmSignIn()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace KiemThuPM
             {
                 string user = txtTen.Text;
                 string pass = txtMatKhau.Text;
-                if (user.Length < 4 || user.Length > 12 || pass.Length > 12)
+                if (user.Length < 4 || pass.Length < 4 || user.Length > 12 || pass.Length > 12)
                     throw new OverflowException();
                 if (user != "" && pass != "")
                 {

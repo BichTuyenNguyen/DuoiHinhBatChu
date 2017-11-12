@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\bin\Debug\KiemThuPM.exe.config
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\bin\Debug\KiemThuPM.exe
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\bin\Debug\KiemThuPM.pdb
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\obj\Debug\KiemThuPM.FrmSignUp.resources
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\obj\Debug\KiemThuPM.FrmSignIn.resources
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\obj\Debug\KiemThuPM.FrmSavePoint.resources
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\obj\Debug\KiemThuPM.FrmGame.resources
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\obj\Debug\KiemThuPM.Properties.Resources.resources
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\obj\Debug\Game_DuoiHinhBatChu.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\obj\Debug\KiemThuPM.exe
+C:\Users\Admin\Desktop\DuoiHinhBatChu\DuoiHinhBatChu\KiemThuPM\obj\Debug\KiemThuPM.pdb

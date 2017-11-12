@@ -14,7 +14,7 @@ namespace KiemThuPM
 {
     public partial class FrmSavePoint : Form
     {
-        SqlConnection cn = new SqlConnection("Data Source=.;Initial Catalog=doihinhbatchu;Integrated Security=True");
+        SqlConnection cn = new SqlConnection(@"Data Source=ADMINPC\THACH;Initial Catalog=duoihinhbatchu;Integrated Security=True;");
         SqlCommand cmd;
         public FrmSavePoint()
         {             

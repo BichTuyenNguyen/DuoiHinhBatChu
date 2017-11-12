@@ -16,7 +16,7 @@ namespace KiemThuPM
 {
     public partial class FrmGame : Form
     {
-        SqlConnection cn = new SqlConnection("Data Source=.;Initial Catalog=doihinhbatchu;Integrated Security=True");
+        SqlConnection cn = new SqlConnection(@"Data Source=ADMINPC\THACH;Initial Catalog=duoihinhbatchu;Integrated Security=True;");
         SqlCommand cmd = null;
 
         public FrmGame()
@@ -312,6 +312,7 @@ namespace KiemThuPM
                             break;
                         }
                     }
+                   // arrLabel[i].BackColor = Color.White;
                     arrLabel[i].Text = "";
                     break;
                 }
@@ -334,7 +335,6 @@ namespace KiemThuPM
                 if (arrLabel[i].Text == "")
                 {
                     arrLabel[i].Text += c.ToString();
-                    arrLabel[i].ForeColor = Color.Blue;
                     arrLabel[i].Enabled = true;
                     gbLable.Controls.Add(arrLabel[i]);
                     gbLable.Invalidate();
@@ -359,18 +359,26 @@ namespace KiemThuPM
                 if (wordChars[i] != ' ')
                 {
                     Label lb = new Label();
-                    if ( len < 10)
+                    if (len <= 5)
                     {
-                        lb.Size = new Size(30, 30);
-                        lb.Location = new Point(100 + i * 30, gbLable.Height - 45);
+                        lb.Size = new Size(35, 35);
+                        lb.Location = new Point(200 + i * 35 + i * 10, gbLable.Height - 45);
+                    }
+                    else if ( len <= 10)
+                    {
+                        lb.Size = new Size(35, 35);
+                        lb.Location = new Point(150 + i * 35 + i*10, gbLable.Height - 45);
                     }
                     else
                     {
-                        lb.Size = new Size(20, 20);
-                        lb.Location = new Point(50 + i * 20, gbLable.Height - 45);
+                        lb.Size = new Size(25, 25);
+                        lb.Location = new Point(75 + i * 25 + i*10, gbLable.Height - 45);
                     }
                     lb.BorderStyle = BorderStyle.FixedSingle;
                     lb.Parent = gbLable;
+                    lb.Font = new Font(FontFamily.GenericSansSerif, 15, FontStyle.Bold);
+                    lb.BackColor = Color.White;
+                    lb.ForeColor = Color.Blue;
                     lb.BringToFront();
                     gbLable.Controls.Add(lb);
                     arrLabel[i] = lb;
@@ -406,13 +414,13 @@ namespace KiemThuPM
             for (int i = 0; i < a.Count; i++)
             {
                 bt = new Button();
-                bt.Size = new System.Drawing.Size(40, 30);
+                bt.Size = new System.Drawing.Size(50, 40);
                 if (i <= 9)
                 {
-                    bt.Location = new System.Drawing.Point(20 + i * 40, gbButton.Height - 50);
+                    bt.Location = new System.Drawing.Point(70 + i * 50 , gbButton.Height - 50);
                 }
                 else 
-                    bt.Location = new System.Drawing.Point(20 + (i - 10) * 40, gbButton.Height - 80);
+                    bt.Location = new System.Drawing.Point(70 + (i - 10) * 50 , gbButton.Height - 90);
 
                 if (a[i] != null)
                 {
@@ -421,13 +429,18 @@ namespace KiemThuPM
                 bt.BringToFront();
                 bt.Parent = gbButton;
                 bt.Font = new Font(FontFamily.GenericSansSerif, 15, FontStyle.Bold);
-                bt.ForeColor = Color.Blue;
+                bt.ForeColor = Color.Black;
+                bt.BackColor = Color.White;
                 gbButton.Controls.Add(bt);
                 bt.Click += new System.EventHandler(this.btA_Click);
                 arrButton[i] = bt;
             }// tạo ra các nút button
             
         }
+
+      
+
+      
 
         
 

@@ -19,7 +19,7 @@ namespace KiemThuPM
             InitializeComponent();
         }
         static string user, pass , name;
-        SqlConnection cn = new SqlConnection("Data Source=.;Initial Catalog=doihinhbatchu;Integrated Security=True");
+        SqlConnection cn = new SqlConnection(@"Data Source=ADMINPC\THACH;Initial Catalog=duoihinhbatchu;Integrated Security=True;");
         SqlCommand cmd = null;
         private void FrmDangKy_Load(object sender, EventArgs e){ }
         private void btEnter_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace KiemThuPM
             name = txtNickname.Text;
             try
             {
-                if (user.Length < 4 || user.Length > 12 || pass.Length > 12)
+                if (user.Length < 4 || pass.Length < 4 || user.Length > 12 || pass.Length > 12)
                     throw new OverflowException();
                 if (user != "" && pass != "" && name != "")
                 {
