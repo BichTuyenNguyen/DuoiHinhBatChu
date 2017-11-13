@@ -436,14 +436,6 @@ namespace KiemThuPM
                 arrButton[i] = bt;
             }// tạo ra các nút button
             
-        }
-
-      
-
-      
-
-        
-
-       
+        }      
     }
 }
